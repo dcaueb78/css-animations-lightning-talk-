@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+:root {
+  --level-one: translateZ(3rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
+  
+  --fw-normal: 400;
+  --fw-bold: 700;
+  
+  --clr: #b7c9e5;
+}
+
 *, *::before, *::after {
    box-sizing: border-box;
    margin: 0;
@@ -8,6 +21,7 @@ body {
   width: 100%;
   display: grid;
   place-items: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 .card {
@@ -39,19 +53,39 @@ body {
 
 .card__front {
   background: lightgreen;
+  display: grid;
+  align-content: center;
+}
+
+.card__front::before {
+  content: '';
+  display: absolute;
+  --spacer: 1em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  border: 3px solid black;
 }
 
 .card__title {
-  font-size: 3rem;
-  transform: translateZ(5rem)
+  font-size: 3.5 rem;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: uppercase;
 }
 
 .card__subtitle {
-  transform: translateZ(2rem);
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .75rem;
+  font-weight: var(--fw-bold);
+  opacity: .7;
 }
 
 .card__body {
-  transform: translateZ(2rem);
+  transform: var(--level-two);
 }
 
 .card__back {
