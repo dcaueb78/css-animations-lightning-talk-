@@ -19,12 +19,11 @@ body {
   position: relative;
   padding: 5em;
   transition: transform 3s;
-  background: pink;
   transform-style: preserve-3d;
 }
 
 .card:hover .card__content {
-  transform: rotateY(.25turn);
+  transform: rotateY(.5turn);
 }
 
 .card__front, .card__back {
@@ -33,9 +32,29 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 2em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .card__front {
-  background: red;
-  transform: rotateY(.25turn);
+  background: lightgreen;
+}
+
+.card__title {
+  font-size: 3rem;
+  transform: translateZ(5rem)
+}
+
+.card__subtitle {
+  transform: translateZ(2rem);
+}
+
+.card__body {
+  transform: translateZ(2rem);
+}
+
+.card__back {
+  transform: rotateY(.5turn);
+  background: lightblue;
 }
